@@ -1,0 +1,19 @@
+{% extends "mail/_base.html" %}
+
+{% block body %}
+    <p>Welcome to The Harvard Lampoon's Advertising portal.</p>
+
+    <p>Please make sure that the information below is correct:</p>
+    <br>
+    <h4>Organization</h4>
+    <p>{{ advertiser.name }}</p>
+    <h4>Address</h4>
+    <p>{{ advertiser.address }}
+    <hr>
+    <h4>Contact</h4>
+    <p>{{ advertiser.contact }}, {{ advertiser.position }}</p>
+    <h4>Phone</h4>
+    <p>{{ advertiser.telephone }}</p>
+    <h4>Email</h4>
+    <p>{{ advertiser.email }}</p>
+{% endblock %}

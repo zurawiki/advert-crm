@@ -1,0 +1,35 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}{{ ad.description }}{% endblock %}
+
+{% block body %}
+    <h1>{% if ad.paid %}
+        <span class="alert alert-success">Paid</span>
+    {% else %}
+        <span class="alert alert-warning">Not yet paid</span>
+    {% endif %}{{ ad.description }}</h1>
+    <br>
+    <p>Created {{ ad.created_at }}</p>
+
+
+    <img class="col-md-6 img-responsive" src="{{ ad.imageFile.url }}">
+
+    <h4>Description</h4>
+    <p>{{ ad.description }}</p>
+
+    <h4>Size</h4>
+    <p>{{ ad.size }}</p>
+
+    <h4>Issues</h4>
+    <p>{% for issue in ad.issues.all %}
+        {{ issue }} {% if not forloop.last %},{% else %} and {% endif %}
+    {% endfor %}</p>
+
+    <h4>Final Price</h4>
+    <p>$ {{ ad.finalPrice }}</p>
+
+
+
+    <a class="btn btn-primary" href="{% url 'update' ad.id %}">Edit</a>
+
+{% endblock %}

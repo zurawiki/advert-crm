@@ -1,0 +1,51 @@
+{% extends "theme_base.html" %}
+
+{% load staticfiles %}
+{% load metron_tags %}
+
+
+{% block style_base %}
+    <link href="{% static "pinax/css/theme.css" %}" rel="stylesheet">
+    <link href="{% static "css/site.css" %}" rel="stylesheet">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    {% block extra_style %}{% endblock %}
+{% endblock %}
+
+
+{% block extra_head_base %}
+    {% block extra_head %}{% endblock %}
+{% endblock %}
+
+{% block nav %}
+    <ul class="nav navbar-nav">
+        <li><a href="/contracts/">Contracts</a></li>
+    </ul>
+{% endblock %}
+
+{% block body_base %}
+    <section id="content_body">
+        <div class="container">
+            {% include "_messages.html" %}
+            {% block body %}
+            {% endblock %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    <p>&copy; 2014 The Harvard Lampoon</p>
+{% endblock %}
+
+
+{% block extra_body_base %}
+    {% analytics %}
+    {% block extra_body %}{% endblock %}
+{% endblock %}
+
+
+{% block script_base %}
+    <script src="{% block jquery_src %}{% static "pinax/js/jquery.js" %}{% endblock %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "pinax/js/theme.js" %}"></script>
+    {% block extra_script %}{% endblock %}
+{% endblock %}

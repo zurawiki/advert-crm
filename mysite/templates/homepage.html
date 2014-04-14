@@ -1,0 +1,113 @@
+{% extends "site_base.html" %}
+
+{% block extra_style %}
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Jim+Nightshade);
+
+        body {
+            font-weight: 300;
+        }
+
+        header {
+            margin-top: -80px;
+        }
+
+        #content_body p {
+            margin-top: 0;
+            margin-bottom: 1em;
+            line-height: 1.6em;
+            font-size: 20px;
+        }
+
+        .splash {
+            height: 25em;
+            padding: 5em 0;
+            margin-bottom: 2em;;
+            background-size: cover;
+            background: url("http://www.harvardlampoon.com/media/images/LIR_1.jpg") top center;
+            background-size: cover;
+
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            text-shadow: 2px 2px black;
+
+        }
+
+        .splash h1 {
+            font-size: 72px;
+            font-family: 'Jim Nightshade', cursive;
+
+        }
+
+        .navbar-default, .dropdown-toggle,
+        .dropdown-menu {
+            position: absolute;
+            background-color: transparent !important;
+        }
+
+        .navbar-default .navbar-brand {
+            font-size: 20px;
+        }
+
+        .navbar-default .navbar-brand,
+        .navbar-default .navbar-nav > li > a {
+            font-weight: 400;
+        }
+
+        .navbar-default .navbar-nav > li > a:hover {
+            background-color: transparent;
+        }
+
+        .btn {
+            font-size: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block nav %}
+    <ul class="nav navbar-nav">
+        <li><a href="/contracts/">Contracts</a></li>
+    </ul>
+{% endblock %}
+
+{% block body_base %}
+    <section class="splash">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>The Harvard Lampoon</h1>
+
+                    <p>Advertising Portal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container" id="content_body">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                {% include "_messages.html" %}
+                {% if user.is_authenticated %}
+                    <p><a href="/contracts" class="">Explore</a>
+                        our advertising contracts.</p>
+                {% else %}
+                    {% url "account_login" as login_url %}
+                    {% url "account_signup" as signup_url %}
+                    <p>You can
+                        <a href="{{ login_url }}" class="btn btn-default">Log In</a>
+                        or
+                        <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a>
+                        to try out the site.</p>
+                {% endif %}
+
+                <p>The term is sometimes attributed to Rudolf Erich Raspe's story The Surprising Adventures of Baron
+                    Munchausen, where the main character pulls himself (and his horse) out of a swamp by his hair
+                    (specifically, his pigtail), but Baron Münchhausen (1720–1797), a recounter of tall tales, does not,
+                    in fact, pull himself out by his bootstraps – and there's no sign that anyone has found an explicit
+                    reference to bootstraps in the various versions of the Munchausen tales.</p>
+            </div>
+
+        </div>
+    </main>
+{% endblock %}

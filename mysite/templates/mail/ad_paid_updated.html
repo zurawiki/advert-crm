@@ -1,0 +1,13 @@
+{% extends "mail/_base.html" %}
+
+{% block body %}
+    <p>You are receiving this email because you have ordered an advertising contract with The Harvard Lampoon.
+
+        We ar enotifying you that the status of your contract has been updated.</p>
+    <p>You can verify the status of your contract below</p>
+    <br>
+    <p>
+        <a href="http://sales.harvardlampoon.com{{ ad.get_absolute_url }}">http://sales.harvardlampoon.com{{ ad.get_absolute_url }}</a>
+    </p>
+
+{% endblock %}
