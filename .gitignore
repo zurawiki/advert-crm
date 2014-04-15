@@ -15,4 +15,3 @@ tmp
 .DS_Store
 *.db
 .idea/
-mysite/settings.py
