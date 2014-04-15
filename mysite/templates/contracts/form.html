@@ -6,7 +6,11 @@
 
 {% block body %}
     <form class="form-horizontal" role="form" method="POST"
-          enctype="multipart/form-data" action="{% url 'update' contract_id %}">
+          enctype="multipart/form-data" 
+{% if contract_id %}
+action="{% url 'update' contract_id %}"
+{% endif %}
+>
     <legend>Contract Form</legend>
         <p>Please fill out this form to request an advertising contract.
             A member of our staff will reply within 24-48 hours.</p>
