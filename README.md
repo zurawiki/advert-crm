@@ -1,27 +1,18 @@
-Roger Zurawicki
-
-rzurawicki@gmail.com
-
-Lowell B-23
-
-Lampoon Advertising
--------------------
-
-http://cloud.rozu.co:9083/
+Advertising CRM
+---------------
 
 https://github.com/rzurawicki/turbo-octo-wookie
 
 ## Purpose
 
-This project is a custom CRM (Customer Relationship Manager) for the Harvard Lampoon.
+This project is a custom CRM (Customer Relationship Manager) for the any publishing company.
 
-This site allows advertisers to create accounts, update their contact information, and upload advertisement media.
-Lampoon business staff can also create accounts, assign advertisers to personnel, and manage contracts for each issue.
+This site allows advertisers to create accounts, update their contact information, and upload advertisement media. Business staff can also create accounts, assign advertisers to personnel, and manage contracts for each issue.
 
 
 ## What's included
     mysite - the Django web project. This manages the whole website including user authentication
-    contracts - this custom Django webapp manages the Advertisers and contracts for the Lampoon
+    contracts - this custom Django webapp manages the Advertisers and contracts for the business
 
 ## Functionality
   * Advertisers can create their own accounts
