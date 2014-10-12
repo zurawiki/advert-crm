@@ -1,7 +1,7 @@
 Advertising CRM
 ---------------
 
-https://github.com/rzurawicki/turbo-octo-wookie
+https://github.com/rzurawicki/advert-crm
 
 ## Purpose
 
